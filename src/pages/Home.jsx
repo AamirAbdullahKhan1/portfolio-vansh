@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Code, Cpu, Terminal, Compass, 
-  Layers, Sparkles, Rocket, Laptop, Shield, X, ChevronLeft, ChevronRight
+  Layers, Sparkles, Trophy, Laptop, Trees, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import PageTransition from '../components/PageTransition';
@@ -133,9 +133,9 @@ export const Home = () => {
               {/* Mini Icon badges representing game titles */}
               <div className="flex gap-4 md:flex-col lg:flex-row self-stretch md:self-auto justify-around flex-wrap">
                 {[
-                  { name: 'Cosmic Voyage', icon: <Rocket className="h-5 w-5 text-indigo-500" /> },
-                  { name: 'Cyber Protocol', icon: <Laptop className="h-5 w-5 text-emerald-500" /> },
-                  { name: 'Neon Artifact', icon: <Shield className="h-5 w-5 text-amber-500" /> },
+                  { name: 'Shaders Expert', icon: <Trophy className="h-5 w-5 text-indigo-500" /> },
+                  { name: 'Physics Engine', icon: <Laptop className="h-5 w-5 text-emerald-500" /> },
+                  { name: 'Procedural Art', icon: <Trees className="h-5 w-5 text-amber-500" /> },
                 ].map((game, idx) => (
                   <div key={idx} className="flex flex-col items-center gap-2 p-3.5 bg-brand-light border border-brand-mint rounded-2xl w-24 text-center">
                     <div className="p-2 rounded-xl bg-white shadow-sm border border-brand-mint/40">
@@ -197,24 +197,24 @@ export const Home = () => {
               <div className="flex gap-4 items-start">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold font-display text-brand-accent mb-2">
-                    Neon Genesis
+                    Dungeon Escape
                   </h3>
                   <p className="text-xs text-gray-600 font-medium leading-relaxed mb-4">
-                    A fast-paced cyberpunk platformer with gravity-defying mechanics.
+                    A first-person puzzle adventure game built in Unreal Engine 5 featuring modular C++ gameplay systems, interactive environmental puzzles, and immersive dungeon exploration.
                   </p>
                   <Link 
-                    to="/projects/neon-genesis" 
+                    to="/projects/dungeon-escape" 
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-dark hover:text-brand-accent transition-colors"
                   >
-                    Play Now <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    View Details <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
                 
                 {/* Cyberpunk Game Thumbnail */}
                 <div className="w-28 h-24 sm:w-32 sm:h-28 rounded-2xl overflow-hidden border border-brand-mint shadow-sm flex-shrink-0 bg-brand-mint/20">
                   <img 
-                    src="/images/neon_genesis.png" 
-                    alt="Neon Genesis screenshot" 
+                    src="https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg" 
+                    alt="Dungeon Escape screenshot" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -231,7 +231,7 @@ export const Home = () => {
               {/* Fantasy Village Image */}
               <div className="relative h-32 w-full rounded-2xl overflow-hidden border border-brand-mint bg-brand-mint/20">
                 <img 
-                  src="/images/fantasy_realm.png" 
+                  src="https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg" 
                   alt="Fantasy Realm preview" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
@@ -248,13 +248,13 @@ export const Home = () => {
               {/* Grid of smaller thumbnail icons resembling the design */}
               <div className="grid grid-cols-3 gap-2">
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
-                  <img src="/images/profile.png" className="w-full h-full object-cover" alt="" />
+                  <img src="https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10 flex items-center justify-center text-brand-accent font-black text-lg">
                   $
                 </div>
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
-                  <img src="/images/nova.png" className="w-full h-full object-cover" alt="" />
+                  <img src="https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
               </div>
             </motion.div>

@@ -69,17 +69,45 @@ More than anything, the project strengthened my understanding of how thoughtful 
     ]
   },
   {
-    id: "project-nova",
-    title: "Project Nova",
-    tagline: "A first-person exploration prototype utilizing Nanite and Lumen to render highly detailed environments.",
-    description: "An experimental exploration prototype developed in Unreal Engine 5 to push the boundaries of real-time lighting and micro-polygon geometry. Focuses on level design, environmental storytelling, and immersive ambient audio systems.",
-    longDescription: `Project Nova was developed as a technical benchmark to explore the capabilities of Unreal Engine 5's Nanite and Lumen systems in a dense, atmospheric sci-fi setting.
+    id: "project-shadowstrike",
+    title: "Project Shadow Strike",
+    tagline: "A third-person shooter prototype developed in Unreal Engine 5 focused on AI-driven combat systems, responsive gameplay mechanics, and advanced C++ architecture.",
+    description: `Shadow Strike is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.`,
 
-### Key Highlights
-- **Dynamic Lighting**: Fully realized dynamic day/night cycles using Lumen global illumination and reflections.
-- **Micro-Polygon Geometry**: Managed asset pipelines for high-fidelity scanned models containing over 2 billion polygons, rendering at a stable 60 FPS.
-- **Environmental Narrative**: Designed an interactive exploration system where players decode glyphs, manipulate machinery, and reconstruct holographic memories.`,
-    image: "/images/nova.png",
+    longDescription: `Project Shadow Strike is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.
+
+### Gameplay Systems :
+
+### AI Combat Framework : 
+
+Developed an advanced enemy AI system using Behavior Trees, Blackboard Keys, and Navigation Mesh pathfinding. Enemies are capable of environmental patrolling, player detection, pursuit behavior, and contextual combat decision-making to create more dynamic encounters.
+
+### Third-Person Combat Mechanics : 
+
+Implemented responsive third-person shooter gameplay including player movement, aiming systems, projectile-based shooting, hit detection, and combat feedback systems designed to create smooth and reactive gameplay interactions.
+
+### Health & Survival Systems : 
+
+Built a modular health and damage management system for both player and enemy characters, handling combat states, real-time damage processing, elimination logic, and survival flow during encounters.
+
+### Technical Highlights : 
+
+--> Integrated Unreal Engine AI systems including Behavior Trees and Blackboard architecture
+
+--> Designed scalable combat and health management systems using C++
+
+--> Refined AI responsiveness, movement handling, and combat timing for smoother gameplay
+
+--> Developed gameplay systems with a focus on modularity, maintainability, and performance consistency
+
+### Development Reflection :
+
+This project served as a deep exploration into shooter gameplay programming and Unreal Engine 5's AI ecosystem. A significant portion of development involved refining enemy behavior, improving navigation accuracy, and creating reliable combat interactions between multiple AI agents and the player simultaneously.
+
+Through Shadow Strike, I strengthened my understanding of gameplay architecture, AI-driven combat systems, and performance-conscious C++ development within modern game environments.
+`,
+    video: "/images/Shootervdo.mp4",
+    image: "https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg",
     tags: ["Unreal Engine 5", "Blueprints"],
     tools: ["UE5", "Lumen", "Nanite", "Substance Painter"],
     category: "Unreal Engine",
@@ -91,85 +119,9 @@ More than anything, the project strengthened my understanding of how thoughtful 
       resolution: "4K Native support"
     },
     gallery: [
-      "/images/nova.png"
+      "https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg",
+      "https://live.staticflickr.com/65535/55288303814_8297f89c37_b.jpg"
     ]
   },
-  {
-    id: "voxel-engine",
-    title: "Voxel Rendering Engine",
-    tagline: "A custom rendering engine built from scratch using C++ and OpenGL.",
-    description: "A sandbox voxel engine featuring chunk-based meshing, infinite procedural terrain generation, ambient occlusion, dynamic day-night lighting, and physics-based collision detection.",
-    longDescription: `Built as a personal quest to master low-level graphics programming. This engine bypasses modern game builders and communicates directly with the GPU via OpenGL.
-
-### Technical Breakdown
-1. **Chunk-Based Greedy Meshing**: Minimizes draw calls and GPU memory by combining adjacent voxel faces of the same type into single large quads, reducing vertex counts by up to 85%.
-2. **Procedural Generation**: Utilizes multi-octave Perlin and Simplex noise to generate realistic terrain contours, cave networks, and biome transitions in real-time.
-3. **GPU-Accelerated Ambient Occlusion**: Computes vertex-level lighting to shade inner corners and crevices, adding volumetric depth to the voxel world.`,
-    image: "/images/voxel.png",
-    tags: ["C++", "OpenGL", "GLSL"],
-    tools: ["C++", "CMake", "GLFW", "OpenGL 4.6", "GLSL"],
-    category: "Prototypes",
-    year: "2023",
-    featured: false,
-    stats: {
-      renderDistance: "32 Chunks",
-      meshingTime: "<2ms per chunk",
-      api: "OpenGL 4.6"
-    },
-    gallery: [
-      "/images/voxel.png"
-    ]
-  },
-  {
-    id: "neon-drift",
-    title: "Neon Drift",
-    tagline: "A fast-paced arcade racing game featuring synthwave aesthetics and tight drifting mechanics.",
-    description: "An arcade racing game built with the Godot Engine. Features responsive arcade vehicle physics, drifting point multipliers, dynamic neon tail tracks, and a pumping electronic soundtrack.",
-    longDescription: `Neon Drift is a retro-futuristic drift racer that prioritizes immediate, satisfying controls. Built to test game feel and juice in a rapid prototyping environment.
-
-### Features
-- **Arcade Vehicle Controller**: Custom-tuned Raycast suspension physics that blend realistic tire friction with exaggerated drift slides.
-- **Dynamic Juice**: Screen shake, field-of-view shifting, motion blur, and particle-burst exhausts that react dynamically to speed.
-- **Score System**: A multiplier system that scales with drift angle, speed, and near-misses of obstacles.`,
-    image: "/images/neondrift.png",
-    tags: ["Godot", "GDScript"],
-    tools: ["Godot Engine", "GDScript", "Blender", "Audacity"],
-    category: "Prototypes",
-    year: "2022",
-    featured: false,
-    stats: {
-      physicsHz: "60 FPS Fixed Update",
-      tracks: "3 Playable Loops",
-      audioTracks: "5 Custom Themes"
-    },
-    gallery: [
-      "/images/neondrift.png"
-    ]
-  },
-  {
-    id: "neon-genesis",
-    title: "Neon Genesis",
-    tagline: "A fast-paced cyberpunk platformer with gravity-defying mechanics.",
-    description: "Control gravity vectors to guide an agile runner through a neon-drenched metropolis. Speedrun optimization, fluid character movements, and complex obstacle design.",
-    longDescription: `Neon Genesis is a platformer where gravity is a variable. By flipping gravity or running along walls, players bypass traditional hazards.
-
-### Core Achievements
-- **Vector Gravity Controller**: Rewrote standard physics behavior to support multidirectional gravity, allowing players to run on walls, ceilings, and curved tracks seamlessly.
-- **Speedrun Integrations**: Integrated timer splits, ghost data saves, and global leaderboards.
-- **Level Choreography**: Designed 15 levels requiring high-precision timing, utilizing visual cues to guide player flow.`,
-    image: "/images/neongenesis.png",
-    tags: ["Unity", "C#"],
-    tools: ["Unity", "C#", "Figma", "Photoshop"],
-    category: "Unity3D",
-    year: "2023",
-    featured: true,
-    stats: {
-      levels: "15 Campaign Maps",
-      mechanic: "360° Wall Running",
-      audio: "Dynamic Music Triggers"
-    },
-    gallery: [
-      "/images/neongenesis.png"
-    ]
-  }
+  
 ];

@@ -5,8 +5,8 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { name: 'LinkedIn', url: 'https://linkedin.com' },
-    { name: 'GitHub', url: 'https://github.com' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vansh-jain-645b67292/' },
+    { name: 'GitHub', url: 'https://github.com/VanshJain609' },
     { name: 'Polyhaven', url: 'https://polyhaven.com' },
     { name: 'ArtStation', url: 'https://artstation.com' },
   ];
