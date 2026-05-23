@@ -28,27 +28,50 @@ export const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
+    
     if (!formData.playerName || !formData.commLink || !formData.messageLore) {
-      alert("Please fill out all required fields to establish connection.");
+      setSubmitError("Please fill out all required fields to establish connection.");
       return;
     }
 
     setIsSubmitting(true);
     
-    // Simulate API request (web3forms/emailJS simulation)
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        playerName: '',
-        commLink: '',
-        questObjective: '',
-        messageLore: ''
+    const payload = new FormData();
+    payload.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    payload.append("name", formData.playerName);
+    payload.append("email", formData.commLink);
+    payload.append("subject", formData.questObjective || "New Contact Form Submission");
+    payload.append("message", formData.messageLore);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload
       });
-    }, 1800);
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setSubmitSuccess(true);
+        setFormData({
+          playerName: '',
+          commLink: '',
+          questObjective: '',
+          messageLore: ''
+        });
+      } else {
+        setSubmitError(data.message || "Error sending message. Please try again later.");
+      }
+    } catch (error) {
+      setSubmitError("An error occurred. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -235,7 +258,12 @@ export const Contact = () => {
                       </div>
 
                       {/* Submit Button */}
-                      <div className="flex justify-end pt-4">
+                      <div className="flex flex-col items-end gap-3 pt-4">
+                        {submitError && (
+                          <div className="text-red-500 text-xs font-bold bg-red-500/10 px-3 py-2 rounded-lg border border-red-500/20">
+                            {submitError}
+                          </div>
+                        )}
                         <button 
                           type="submit"
                           disabled={isSubmitting}
