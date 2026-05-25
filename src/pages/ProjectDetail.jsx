@@ -151,7 +151,7 @@ export const ProjectDetail = () => {
                   <div className="flex gap-3">
                     <Calendar className="h-5 w-5 text-brand-accent flex-shrink-0" />
                     <div>
-                      <span className="block text-xs font-bold text-gray-400 uppercase">Release Year</span>
+                      <span className="block text-xs font-bold text-gray-400 uppercase">Developed Year</span>
                       <span className="text-sm font-semibold text-brand-dark">{project.year}</span>
                     </div>
                   </div>

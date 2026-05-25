@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowRight, Code, Cpu, Terminal, Compass, 
+  ArrowRight, Code, Cpu, Terminal, Compass, Map, Blend,
   Layers, Sparkles, Trophy, Laptop, Trees, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
@@ -37,10 +37,13 @@ export const Home = () => {
 
   const skills = [
     { name: 'Unity', icon: <Compass className="h-4 w-4 text-brand-accent" /> },
-    { name: 'Python', icon: <Code className="h-4 w-4 text-brand-accent" /> },
+    { name: 'C#', icon: <Code className="h-4 w-4 text-brand-accent" /> },
     { name: 'Unreal Engine', icon: <Cpu className="h-4 w-4 text-brand-accent" /> },
     { name: 'Photoshop', icon: <Sparkles className="h-4 w-4 text-brand-accent" /> },
     { name: 'C++', icon: <Terminal className="h-4 w-4 text-brand-accent" /> },
+    { name: 'Blueprints', icon: <Map className="h-4 w-4 text-brand-accent" /> },
+    { name: 'Multi-Player', icon: <Blend className="h-4 w-4 text-brand-accent" /> },
+    { name: 'Blueprints', icon: <Map className="h-4 w-4 text-brand-accent" /> },
   ];
 
   // Flatten all project images for the carousel

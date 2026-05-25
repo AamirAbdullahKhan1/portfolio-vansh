@@ -46,19 +46,24 @@ export const About = () => {
 
   const skillTree = [
     {
-      category: "Engine Architecture",
-      level: 90,
-      skills: ["Unity C#", "Unreal C++", "Memory Management"]
+      category: "Unreal Engine 5",
+      level: 70,
+      skills: ["Gameplay Programming", "Multiplayer Systems", "UI (UMG)", "AI Systems", "Problem Solving"]
     },
     {
-      category: "Render Pipelines",
-      level: 75,
-      skills: ["HLSL/GLSL", "Compute Shaders", "URP/HDRP"]
+      category: "C++",
+      level: 60,
+      skills: ["OOPS", "Debugging", "Gameplay Systems"]
     },
     {
-      category: "Gameplay Systems",
-      level: 85,
-      skills: ["AI/Behavior Trees", "State Machines", "Networking (Photon)"]
+      category: "Networking",
+      level: 50,
+      skills: ["Online Subsystem", "Session Management", "Client-Server Architecture"]
+    },
+    {
+      category: "Tools",
+      level: 70,
+      skills: ["JetBrains Rider", "GitHub", "Version Control"]
     }
   ];
 
@@ -93,7 +98,7 @@ export const About = () => {
             Player Data
           </h1>
           <p className="max-w-3xl mx-auto text-base sm:text-lg font-medium text-gray-500 leading-relaxed">
-            Level 12 Game Developer specializing in systems architecture and rendering pipelines.<br />
+            Game Developer specializing in systems architecture and rendering pipelines.<br />
             Currently exploring procedural generation and narrative mechanics.
           </p>
         </div>
@@ -152,7 +157,7 @@ export const About = () => {
                     <span className="font-bold text-gray-400 flex items-center gap-2">
                       <MapPin className="h-4 w-4" /> BASE
                     </span>
-                    <span className="font-semibold text-brand-dark">San Francisco, CA</span>
+                    <span className="font-semibold text-brand-dark">Hyderabad, India</span>
                   </div>
                   <div className="flex items-center justify-between text-sm py-2 border-b border-brand-mint/40">
                     <span className="font-bold text-gray-400 flex items-center gap-2">
@@ -164,7 +169,7 @@ export const About = () => {
                     <span className="font-bold text-gray-400 flex items-center gap-2">
                       <Zap className="h-4 w-4" /> XP
                     </span>
-                    <span className="font-semibold text-brand-dark">5+ Years</span>
+                    <span className="font-semibold text-brand-dark">2+ Years</span>
                   </div>
                 </div>
 
@@ -227,47 +232,7 @@ export const About = () => {
 
         </div>
 
-        {/* Quest Log Timeline */}
-        <div className="mt-12">
-          <ScrollReveal direction="up" delay={0.3}>
-            <div className="bg-brand-cardBg border border-brand-mint/50 rounded-[2rem] p-8 shadow-card">
-              <div className="flex items-center gap-3 mb-8 border-b border-brand-mint/40 pb-4">
-                <Trophy className="h-6 w-6 text-brand-accent" />
-                <h2 className="text-2xl font-bold font-display text-brand-dark">
-                  Quest Log
-                </h2>
-              </div>
-
-              {/* Vertical Timeline */}
-              <div className="relative border-l border-brand-mint ml-3 space-y-10 py-2">
-                {experience.map((item, index) => (
-                  <div key={index} className="relative pl-8 group">
-                    {/* Timeline Node Point */}
-                    <div className="absolute -left-[6px] top-1.5 h-3 w-3 rounded-full border-2 border-brand-accent bg-white group-hover:scale-125 transition-transform" />
-
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                      <div>
-                        <h3 className="font-bold text-lg text-brand-dark leading-none">
-                          {item.role}
-                        </h3>
-                        <span className="text-xs font-bold text-brand-accent hover:underline cursor-pointer">
-                          @{item.company}
-                        </span>
-                      </div>
-                      <span className="text-xs sm:text-sm font-semibold text-gray-400">
-                        {item.period}
-                      </span>
-                    </div>
-
-                    <p className="text-sm font-medium text-gray-500 leading-relaxed max-w-4xl">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+        
 
       </div>
     </PageTransition>
