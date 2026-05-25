@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowRight, Code, Cpu, Terminal, Compass, Map, Blend,
+  ArrowRight, Code, Cpu, Terminal, Compass, Map, Blend, MonitorCog,
   Layers, Sparkles, Trophy, Laptop, Trees, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
@@ -43,7 +43,7 @@ export const Home = () => {
     { name: 'C++', icon: <Terminal className="h-4 w-4 text-brand-accent" /> },
     { name: 'Blueprints', icon: <Map className="h-4 w-4 text-brand-accent" /> },
     { name: 'Multi-Player', icon: <Blend className="h-4 w-4 text-brand-accent" /> },
-    { name: 'Blueprints', icon: <Map className="h-4 w-4 text-brand-accent" /> },
+    { name: 'Subsytems', icon: <MonitorCog className="h-4 w-4 text-brand-accent" /> },
   ];
 
   // Flatten all project images for the carousel
