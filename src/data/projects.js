@@ -91,25 +91,25 @@ More than anything, the project strengthened my understanding of how thoughtful 
   },
   {
     id: "project-shadowstrike",
-    title: "Project Shadow Strike",
+    title: "Shooter Don",
     tagline: "A third-person shooter prototype developed in Unreal Engine 5 focused on AI-driven combat systems, responsive gameplay mechanics, and advanced C++ architecture.",
-    description: `Shadow Strike is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.`,
+    description: `Shooter Don is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.`,
 
-    longDescription: `Project Shadow Strike is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.
+    longDescription: `The core gameplay centers around tactical third-person combat in a hostile arena environment, where players must eliminate AI-controlled enemies, survive active encounters, and maintain control of the battlefield through movement, aiming precision, and positioning.
 
 ### Gameplay Systems :
 
 ### AI Combat Framework : 
 
-Developed an advanced enemy AI system using Behavior Trees, Blackboard Keys, and Navigation Mesh pathfinding. Enemies are capable of environmental patrolling, player detection, pursuit behavior, and contextual combat decision-making to create more dynamic encounters.
+Developed an enemy AI system using Unreal Engine’s Behavior Trees, Blackboard Keys, and Navigation Mesh pathfinding to create responsive combat behavior. Enemies are capable of patrolling designated areas, detecting player presence, chasing targets, and engaging in combat based on real-time decision-making logic.
 
 ### Third-Person Combat Mechanics : 
 
-Implemented responsive third-person shooter gameplay including player movement, aiming systems, projectile-based shooting, hit detection, and combat feedback systems designed to create smooth and reactive gameplay interactions.
+Implemented responsive third-person shooter gameplay including movement handling, projectile-based combat interactions, targeting systems, and hit detection. Combat flow was designed to feel smooth and reactive while supporting multiple active encounters.
 
 ### Health & Survival Systems : 
 
-Built a modular health and damage management system for both player and enemy characters, handling combat states, real-time damage processing, elimination logic, and survival flow during encounters.
+Built a modular health management system for both player and enemy characters, handling damage calculation, combat feedback, elimination states, and survival conditions throughout gameplay.
 
 ### Technical Highlights : 
 
@@ -121,15 +121,23 @@ Built a modular health and damage management system for both player and enemy ch
 
 --> Developed gameplay systems with a focus on modularity, maintainability, and performance consistency
 
+### Combat State Management : 
+
+Designed gameplay systems responsible for health tracking, damage processing, elimination logic, and encounter flow management between player and enemy entities.
+
+### Performance & Responsiveness : 
+
+Focused on improving gameplay responsiveness through movement refinement, AI reaction timing, navigation reliability, and smoother combat interactions to maintain consistent gameplay performance.
+
 ### Development Reflection :
 
-This project served as a deep exploration into shooter gameplay programming and Unreal Engine 5's AI ecosystem. A significant portion of development involved refining enemy behavior, improving navigation accuracy, and creating reliable combat interactions between multiple AI agents and the player simultaneously.
+The goal of Shooter DOn was to deepen my understanding of shooter gameplay systems and Unreal Engine 5's AI architecture through hands-on implementation. A major part of development involved learning Unreal's Behavior Tree workflow, designing believable enemy behavior, and building gameplay systems capable of supporting multiple simultaneous AI encounters.
 
-Through Shadow Strike, I strengthened my understanding of gameplay architecture, AI-driven combat systems, and performance-conscious C++ development within modern game environments.
+One of the most valuable parts of the project was solving gameplay interaction challenges between the player and multiple AI enemies while keeping combat responsive and reliable. The project strengthened my practical experience in gameplay programming, AI system design, combat mechanics, and C++ development in Unreal Engine 5.
 `,
     video: "/images/Shootervdo.mp4",
     image: "https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg",
-    tags: ["Unreal Engine 5", "Blueprints", "C++"],
+    tags: ["UE 5", "C++", "Blueprints"],
     tools: ["UE5", "Lumen", "Nanite", "Substance Painter"],
     category: "Unreal Engine",
     year: "2023",
@@ -154,7 +162,7 @@ Through Shadow Strike, I strengthened my understanding of gameplay architecture,
         description: "Built modular health and damage management processing."
       }
     ],
-    github: "https://github.com/AamirAbdullahKhan1/portfolio-vansh",
+    github: "https://github.com/VanshJain609/ShooterDon",
     stats: {
       polygonCount: "2B+ Triangles",
       lighting: "Real-time GI",
@@ -163,6 +171,88 @@ Through Shadow Strike, I strengthened my understanding of gameplay architecture,
     gallery: [
       "https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg",
       "https://live.staticflickr.com/65535/55288303814_8297f89c37_b.jpg"
+    ]
+  },
+  {
+    id: "project-2d-shooter",
+    title: "Gun Survivors",
+    tagline: "A 2D endless survival shooter developed in Unreal Engine 5 featuring dynamic enemy spawning, score-driven progression, and fast-paced gameplay systems built with C++ and Blueprints.",
+    description: `Gun Survivors is a 2D endless survival shooter developed in Unreal Engine 5 using both C++ and Blueprint scripting. The project focuses on building fast-paced survival gameplay through scalable enemy spawning systems, score-based progression, and increasing difficulty over time.`,
+
+    longDescription: `The core gameplay loop is centered around surviving as long as possible while defeating waves of enemies in an arena-style environment. Players must continuously move, avoid enemy collisions, and eliminate incoming threats to increase their score and stay alive as the challenge intensifies.
+
+### Gameplay Systems :
+
+### Endless Survival Loop : 
+
+Designed and implemented an endless gameplay loop focused on player survival and continuous progression. The experience is built to become more intense over time, encouraging players to react quickly and adapt as enemy pressure increases.
+
+### Dynamic Enemy Spawning : 
+
+Developed a timed enemy spawning system where enemies appear continuously throughout gameplay. Spawn frequency gradually increases based on the player’s score, creating natural difficulty scaling and a progressively more demanding combat experience.
+
+### Score & Progression System : 
+
+Implemented a score system that rewards players for every enemy eliminated. The score directly influences gameplay pacing by increasing enemy spawn rates, creating a simple but effective progression loop tied to player performance.
+
+### 2D Combat & Collision Handling : 
+
+Built sprite-based player, enemy, and weapon systems using Unreal Engine’s 2D workflow. Implemented collision detection for combat interactions, enemy elimination, and game-over conditions to maintain responsive gameplay.
+
+### Technical Highlights : 
+
+--> Developed gameplay systems using C++ and Blueprint scripting
+
+--> Implemented dynamic enemy spawning with score-based difficulty scaling
+
+--> Designed a responsive score progression and endless survival loop
+
+--> Built 2D sprite-based player, enemy, and weapon interactions
+
+--> Integrated collision handling and game-over state management
+
+### Development Reflection :
+
+Gun Survivors was a focused exploration into building arcade-style survival gameplay inside Unreal Engine 5. The project helped strengthen my understanding of gameplay loop design, real-time difficulty balancing, and combining C++ with Blueprints to build scalable systems quickly.
+
+A major focus during development was making the progression feel consistently engaging by balancing spawn timing, score pacing, and collision responsiveness while keeping the gameplay loop simple and replayable.
+`,
+    video: "/images/Gun_Survivors.mp4",
+    image: "https://live.staticflickr.com/65535/55293180437_8cb4626229_b.jpg",
+    tags: ["UE 5", "C++", "Blueprints", "Sprites"],
+    tools: ["UE5", "Rider", "Game Art 2D"],
+    category: "Unreal Engine 5",
+    year: "2025",
+    featured: false,
+    date: "Sep 28, 2024",
+    readTime: "8 min read",
+    author: "Vansh Jain",
+    timeline: [
+      {
+        date: "Sep 25, 2024",
+        title: "AI Combat Framework Initiation",
+        description: "Started developing enemy AI system using Behavior Trees and Navigation Mesh."
+      },
+      {
+        date: "Sep 20, 2024",
+        title: "Third-Person Mechanics Prototyping",
+        description: "Implemented core movement and aiming systems for responsive gameplay."
+      },
+      {
+        date: "Sep 15, 2024",
+        title: "Health & Survival Systems Integration",
+        description: "Built modular health and damage management processing."
+      }
+    ],
+    github: "https://github.com/VanshJain609/ThiefChac",
+    stats: {
+      "Enemy Waves": "Infinite Spawn System",
+      "Progression": "Score-Based Scaling",
+      "Player View": "Top-down Perspective"
+    },
+    gallery: [
+      "https://live.staticflickr.com/65535/55294500500_2e0a32687b_b.jpg",
+      "https://live.staticflickr.com/65535/55293180442_c179cb76fd_b.jpg"
     ]
   },
   

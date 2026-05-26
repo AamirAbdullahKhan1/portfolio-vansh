@@ -174,7 +174,7 @@ export const Projects = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 flex gap-1">
-                      {project.tags.slice(0, 2).map((tag, idx) => (
+                      {project.tags.slice(0, 3).map((tag, idx) => (
                         <span key={idx} className="bg-white/90 text-brand-dark text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
                           {tag}
                         </span>
