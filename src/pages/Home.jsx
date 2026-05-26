@@ -241,9 +241,10 @@ export const Home = () => {
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
                   <img src="https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
-                <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10 flex items-center justify-center text-brand-accent font-black text-lg">
-                  $
+                <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
+                  <img src="https://live.staticflickr.com/65535/55293180437_8cb4626229_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
+                
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
                   <img src="https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>

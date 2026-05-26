@@ -174,9 +174,15 @@ export const About = () => {
                 </div>
 
                 {/* Download Resume Button */}
-                <button className="w-full py-3.5 rounded-2xl bg-brand-accent hover:bg-brand-hover text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                <a 
+                  href="/images/Vansh_jain_Resume.pdf"
+                  download="Vansh_jain_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 rounded-2xl bg-brand-accent hover:bg-brand-hover text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                >
                   <Download className="h-4 w-4" /> Download Resume
-                </button>
+                </a>
               </div>
             </ScrollReveal>
           </div>
@@ -191,16 +197,14 @@ export const About = () => {
                   <div className="flex items-center gap-3 mb-6">
                     <Terminal className="h-6 w-6 text-brand-accent" />
                     <h2 className="text-2xl font-bold font-display text-brand-dark">
-                      System Overview
+                      Overview
                     </h2>
                   </div>
                   <div className="space-y-4 text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                     <p>
-                      As a Systems Architect and Game Developer, I specialize in the intersection of high-performance engineering and immersive player experiences. With a deep focus on engine architecture and custom rendering pipelines, I build the foundations that allow creative visions to come to life.
+                      Unreal Engine developer with hands-on experience in C++ gameplay programming, multiplayer systems, and gameplay feature development. Developed projects involving AI systems, UI implementation, and multiplayer session management in Unreal Engine 5. Passionate about gameplay programming, solving technical challenges, and creating interactive player experiences, while continuously expanding knowledge in networking, game systems, and game development workflows.
                     </p>
-                    <p>
-                      My approach combines rigorous technical logic with an intuitive understanding of gameplay feel, ensuring that every system I design is as efficient as it is engaging.
-                    </p>
+                    
                   </div>
                 </div>
 

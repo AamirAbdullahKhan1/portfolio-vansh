@@ -90,7 +90,7 @@ More than anything, the project strengthened my understanding of how thoughtful 
     ]
   },
   {
-    id: "project-shadowstrike",
+    id: "shooter-don",
     title: "Shooter Don",
     tagline: "A third-person shooter prototype developed in Unreal Engine 5 focused on AI-driven combat systems, responsive gameplay mechanics, and advanced C++ architecture.",
     description: `Shooter Don is a third-person shooter prototype developed in Unreal Engine 5 using C++ gameplay systems and Unreal Engine's AI framework. The project focuses on creating responsive combat mechanics, intelligent enemy behavior, and immersive survival-based gameplay within a hostile arena environment.`,
@@ -101,7 +101,7 @@ More than anything, the project strengthened my understanding of how thoughtful 
 
 ### AI Combat Framework : 
 
-Developed an enemy AI system using Unreal Engine’s Behavior Trees, Blackboard Keys, and Navigation Mesh pathfinding to create responsive combat behavior. Enemies are capable of patrolling designated areas, detecting player presence, chasing targets, and engaging in combat based on real-time decision-making logic.
+Developed an enemy AI system using Unreal Engine's Behavior Trees, Blackboard Keys, and Navigation Mesh pathfinding to create responsive combat behavior. Enemies are capable of patrolling designated areas, detecting player presence, chasing targets, and engaging in combat based on real-time decision-making logic.
 
 ### Third-Person Combat Mechanics : 
 
@@ -138,9 +138,9 @@ One of the most valuable parts of the project was solving gameplay interaction c
     video: "/images/Shootervdo.mp4",
     image: "https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg",
     tags: ["UE 5", "C++", "Blueprints"],
-    tools: ["UE5", "Lumen", "Nanite", "Substance Painter"],
+    tools: ["UE5", "Git", "NavMesh"],
     category: "Unreal Engine",
-    year: "2023",
+    year: "2025-26",
     featured: false,
     date: "Sep 28, 2024",
     readTime: "8 min read",
@@ -164,9 +164,9 @@ One of the most valuable parts of the project was solving gameplay interaction c
     ],
     github: "https://github.com/VanshJain609/ShooterDon",
     stats: {
-      polygonCount: "2B+ Triangles",
-      lighting: "Real-time GI",
-      resolution: "4K Native support"
+      "Game Mode": "Arena Shooter",
+      "Combat Style": "Tactical Shooting",
+      "Perspective": "Third Person"
     },
     gallery: [
       "https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg",
@@ -174,7 +174,7 @@ One of the most valuable parts of the project was solving gameplay interaction c
     ]
   },
   {
-    id: "project-2d-shooter",
+    id: "gun-survivors",
     title: "Gun Survivors",
     tagline: "A 2D endless survival shooter developed in Unreal Engine 5 featuring dynamic enemy spawning, score-driven progression, and fast-paced gameplay systems built with C++ and Blueprints.",
     description: `Gun Survivors is a 2D endless survival shooter developed in Unreal Engine 5 using both C++ and Blueprint scripting. The project focuses on building fast-paced survival gameplay through scalable enemy spawning systems, score-based progression, and increasing difficulty over time.`,
