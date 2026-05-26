@@ -202,13 +202,16 @@ export const About = () => {
                   </div>
                   <div className="space-y-4 text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                     <p>
-                      Unreal Engine developer with hands-on experience in C++ gameplay programming, multiplayer systems, and gameplay feature development. Developed projects involving AI systems, UI implementation, and multiplayer session management in Unreal Engine 5. Passionate about gameplay programming, solving technical challenges, and creating interactive player experiences, while continuously expanding knowledge in networking, game systems, and game development workflows.
+                      Gameplay programmer with a strong focus on Unreal Engine 5, C++, and building engaging gameplay systems. I enjoy creating interactive player experiences through gameplay mechanics, AI behavior, multiplayer systems, and solving technical challenges behind the scenes.
+                    </p>
+                    <p>
+                      I've worked on projects involving combat systems, session-based multiplayer, UI implementation, and gameplay architecture, with a focus on building systems that feel responsive, scalable, and enjoyable to play. I'm passionate about learning new technologies, improving my development workflow, and continuously growing as a gameplay programmer through hands-on project development.
                     </p>
                     
                   </div>
                 </div>
 
-                <hr className="border-brand-mint/40 mb-10" />
+                <hr className="border-brand-mint/100 mb-10" />
 
                 <div className="flex items-center gap-3 mb-8">
                   <GitPullRequest className="h-6 w-6 text-brand-accent" />

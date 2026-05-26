@@ -7,8 +7,6 @@ export const Footer = () => {
   const links = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vansh-jain-645b67292/' },
     { name: 'GitHub', url: 'https://github.com/VanshJain609' },
-    { name: 'Polyhaven', url: 'https://polyhaven.com' },
-    { name: 'ArtStation', url: 'https://artstation.com' },
   ];
 
   return (
