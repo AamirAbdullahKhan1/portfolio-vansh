@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Shield, Trophy, MapPin, Briefcase, Zap, GitPullRequest, CircleDot } from 'lucide-react';
+import { Download, Shield, Trophy, MapPin, Briefcase, Zap, GitPullRequest, CircleDot, Terminal } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 
@@ -181,10 +181,31 @@ export const About = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Skill Tree Panel */}
+          {/* Right Column: Summary & Skill Tree Panel */}
           <div className="lg:col-span-8">
             <ScrollReveal direction="left" delay={0.2}>
               <div className="bg-brand-cardBg border border-brand-mint/50 rounded-[2rem] p-8 shadow-card">
+                
+                {/* Developer Summary Section */}
+                <div className="mb-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Terminal className="h-6 w-6 text-brand-accent" />
+                    <h2 className="text-2xl font-bold font-display text-brand-dark">
+                      System Overview
+                    </h2>
+                  </div>
+                  <div className="space-y-4 text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
+                    <p>
+                      As a Systems Architect and Game Developer, I specialize in the intersection of high-performance engineering and immersive player experiences. With a deep focus on engine architecture and custom rendering pipelines, I build the foundations that allow creative visions to come to life.
+                    </p>
+                    <p>
+                      My approach combines rigorous technical logic with an intuitive understanding of gameplay feel, ensuring that every system I design is as efficient as it is engaging.
+                    </p>
+                  </div>
+                </div>
+
+                <hr className="border-brand-mint/40 mb-10" />
+
                 <div className="flex items-center gap-3 mb-8">
                   <GitPullRequest className="h-6 w-6 text-brand-accent" />
                   <h2 className="text-2xl font-bold font-display text-brand-dark">

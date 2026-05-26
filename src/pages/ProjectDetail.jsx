@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Tag, Wrench, BarChart2, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Wrench, BarChart2, ChevronLeft, ChevronRight, X, GitGraph } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/projects';
 import PageTransition from '../components/PageTransition';
@@ -193,6 +193,15 @@ export const ProjectDetail = () => {
                     </div>
                   ))}
                 </div>
+
+                <a 
+                  href={project.github || "https://github.com"} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 rounded-2xl bg-brand-dark hover:bg-black text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                >
+                  <GitGraph className="h-4 w-4" /> View Source Code
+                </a>
               </div>
             </ScrollReveal>
 

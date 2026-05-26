@@ -58,6 +58,27 @@ More than anything, the project strengthened my understanding of how thoughtful 
     category: "Unreal Engine",
     year: "2026",
     featured: true,
+    date: "Oct 24, 2024",
+    readTime: "12 min read",
+    author: "Vansh Jain",
+    timeline: [
+      {
+        date: "Oct 20, 2024",
+        title: "Initial Research & Architecture",
+        description: "Deep dive into modular puzzle systems and reusable C++ classes. Evaluated event-driven interactions."
+      },
+      {
+        date: "Oct 15, 2024",
+        title: "Prototype Trigger Systems",
+        description: "Successfully built synchronized trigger systems. Handled overlap detection and simultaneous interactions."
+      },
+      {
+        date: "Oct 10, 2024",
+        title: "Character Framework Setup",
+        description: "Developed the responsive first-person controller with interaction tracing."
+      }
+    ],
+    github: "https://github.com/VanshJain609/DungeonEscape",
     stats: {
       focus: "Gameplay Programming",
       framework: "C++ Modular Systems",
@@ -113,6 +134,27 @@ Through Shadow Strike, I strengthened my understanding of gameplay architecture,
     category: "Unreal Engine",
     year: "2023",
     featured: false,
+    date: "Sep 28, 2024",
+    readTime: "8 min read",
+    author: "Vansh Jain",
+    timeline: [
+      {
+        date: "Sep 25, 2024",
+        title: "AI Combat Framework Initiation",
+        description: "Started developing enemy AI system using Behavior Trees and Navigation Mesh."
+      },
+      {
+        date: "Sep 20, 2024",
+        title: "Third-Person Mechanics Prototyping",
+        description: "Implemented core movement and aiming systems for responsive gameplay."
+      },
+      {
+        date: "Sep 15, 2024",
+        title: "Health & Survival Systems Integration",
+        description: "Built modular health and damage management processing."
+      }
+    ],
+    github: "https://github.com/AamirAbdullahKhan1/portfolio-vansh",
     stats: {
       polygonCount: "2B+ Triangles",
       lighting: "Real-time GI",

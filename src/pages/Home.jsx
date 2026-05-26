@@ -90,19 +90,7 @@ export const Home = () => {
           <div className="lg:col-span-8 flex flex-col gap-6">
             
             {/* Tag Pills Bar */}
-            <motion.div 
-              variants={itemVariants}
-              className="bg-brand-cardBg border border-brand-mint/50 rounded-full px-6 py-4 shadow-card flex flex-wrap items-center gap-3 sm:gap-6"
-            >
-              {['Level Design', '3D Modeling', 'Scripting', 'UI/UX'].map((tag, idx) => (
-                <span 
-                  key={idx}
-                  className="px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-light border border-brand-mint text-brand-dark hover:bg-brand-mint hover:text-brand-accent transition-all duration-200 cursor-pointer"
-                >
-                  {tag}
-                </span>
-              ))}
-            </motion.div>
+            
 
             {/* Arched Profile Photo Card */}
             <motion.div 
