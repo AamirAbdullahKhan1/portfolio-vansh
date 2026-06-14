@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
-import { projects } from '../data/projects';
+import { blogs } from '../data/blogs';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 
 export const BlogDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const projectIndex = projects.findIndex(p => p.id === id);
-  const project = projects[projectIndex];
+  const projectIndex = blogs.findIndex(p => p.id === id);
+  const project = blogs[projectIndex];
 
   useEffect(() => {
     if (!project) {
@@ -24,8 +24,8 @@ export const BlogDetail = () => {
   const blogCategory = project.stats?.focus === 'Gameplay Programming' ? 'Gameplay Mechanics' : 'Engine Architecture';
 
   // For continue reading, get the next two projects (or loop)
-  const nextProject1 = projects[(projectIndex + 1) % projects.length];
-  const nextProject2 = projects[(projectIndex + 2) % projects.length];
+  const nextProject1 = blogs[(projectIndex + 1) % blogs.length];
+  const nextProject2 = blogs[(projectIndex + 2) % blogs.length];
   const relatedPosts = [nextProject1, nextProject2].filter((p, index, self) => 
     index === self.findIndex((t) => (t.id === p.id))
   ).filter(p => p.id !== project.id); // Try to not show same project
@@ -94,28 +94,82 @@ export const BlogDetail = () => {
                 {project.description}
               </p>
               
-              {/* Dynamic rendering of long description to look like technical blog */}
-              {project.longDescription.split('\n\n').map((paragraph, pIdx) => {
-                if (paragraph.startsWith('###')) {
+              {/* Dynamic rendering of content blocks */}
+              {project.contentBlocks ? project.contentBlocks.map((block, pIdx) => {
+                if (block.type === 'heading') {
                   return (
                     <h3 key={pIdx} className="text-2xl font-bold font-display text-[#06242c] mt-10 mb-4 tracking-tight">
-                      {paragraph.replace('###', '').trim()}
+                      {block.value}
                     </h3>
                   );
                 }
-                if (paragraph.startsWith('- ') || paragraph.startsWith('1. ') || paragraph.startsWith('-->')) {
+                if (block.type === 'image') {
+                  return (
+                    <div key={pIdx} className="my-10 bg-[#f8fbfb] p-4 sm:p-6 rounded-[2rem] border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.02)]">
+                      <img src={block.value} alt={block.caption || 'Blog graphic'} className="w-full h-auto rounded-xl shadow-sm mb-4" />
+                      {block.caption && (
+                        <p className="text-center text-xs font-bold text-gray-400 italic">
+                          {block.caption}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
+                if (block.type === 'code') {
+                  return (
+                    <div key={pIdx} className="my-8 rounded-2xl overflow-hidden shadow-lg border border-gray-800 bg-[#0f172a]">
+                      <div className="flex items-center justify-between px-4 py-3 bg-[#1e293b] border-b border-gray-700/50">
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{block.language || 'Code Snippet'}</span>
+                        <div className="flex gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                        </div>
+                      </div>
+                      <pre className="p-6 overflow-x-auto">
+                        <code className="text-sm font-mono text-blue-300 leading-relaxed whitespace-pre">
+                          {block.value}
+                        </code>
+                      </pre>
+                    </div>
+                  );
+                }
+                if (block.type === 'list') {
                   return (
                     <ul key={pIdx} className="list-disc pl-5 space-y-3 mt-4 bg-[#f8fafc] p-6 rounded-2xl border border-gray-100">
-                      {paragraph.split('\n').map((li, lIdx) => (
+                      {block.items?.map((li, lIdx) => (
                         <li key={lIdx} className="text-gray-700">
-                          {li.replace(/^[-*]\s+|\d+\.\s+|-->\s+/, '').trim()}
+                          {li}
                         </li>
                       ))}
                     </ul>
                   );
                 }
-                return <p key={pIdx} className="mt-4">{paragraph}</p>;
-              })}
+                return <p key={pIdx} className="mt-4">{block.value}</p>;
+              }) : (
+                /* Fallback for older string-based descriptions */
+                project.longDescription?.split('\n\n').map((paragraph, pIdx) => {
+                  if (paragraph.startsWith('###')) {
+                    return (
+                      <h3 key={pIdx} className="text-2xl font-bold font-display text-[#06242c] mt-10 mb-4 tracking-tight">
+                        {paragraph.replace('###', '').trim()}
+                      </h3>
+                    );
+                  }
+                  if (paragraph.startsWith('- ') || paragraph.startsWith('1. ') || paragraph.startsWith('-->')) {
+                    return (
+                      <ul key={pIdx} className="list-disc pl-5 space-y-3 mt-4 bg-[#f8fafc] p-6 rounded-2xl border border-gray-100">
+                        {paragraph.split('\n').map((li, lIdx) => (
+                          <li key={lIdx} className="text-gray-700">
+                            {li.replace(/^[-*]\s+|\d+\.\s+|-->\s+/, '').trim()}
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  return <p key={pIdx} className="mt-4">{paragraph}</p>;
+                })
+              )}
             </div>
 
             {/* Dev Diary Timeline Section */}

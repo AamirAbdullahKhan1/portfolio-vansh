@@ -241,11 +241,13 @@ export const Projects = () => {
         </motion.div>
 
         {/* Load More button */}
+        {/*
         <div className="flex justify-center mt-12">
           <button className="px-6 py-3 rounded-full bg-white border border-brand-mint hover:bg-brand-mint/20 text-brand-dark font-bold text-sm tracking-wide shadow-sm hover:shadow transition-all duration-200 flex items-center gap-2">
             <Plus className="h-4 w-4 text-brand-accent" /> Load More Projects
           </button>
         </div>
+        */}
 
       </div>
     </PageTransition>
