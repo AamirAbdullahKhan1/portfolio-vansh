@@ -3,7 +3,7 @@ export const blogs = [
     id: "dungeon-escape-journey",
     title: "Dungeon Escape — My Journey Building a Puzzle Survival Game in Unreal Engine 5",
     category: "GAMEPLAY MECHANICS",
-    date: "Oct 24, 2026",
+    date: "Jan 20, 2026",
     image: "https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg",
     description: "Dungeon Escape is a single-player puzzle-survival game I developed in Unreal Engine 5.6 using C++ and Blueprints. The game is focused on exploration, puzzle-solving, and player interaction.",
     contentBlocks: [
@@ -18,7 +18,24 @@ export const blogs = [
       { type: 'code', language: 'cpp', value: 'void ADungeonTrigger::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor...)\n{\n    if (OtherActor && OtherActor != this && bIsActive)\n    {\n        // Check if the interacting actor has the required puzzle key or mass\n        if (ValidateInteraction(OtherActor))\n        {\n            ActivateLinkedMechanisms();\n        }\n    }\n}' },
       { type: 'text', value: 'I also spent time carefully placing keys and interactive objects around the map to make exploration feel rewarding and the puzzles more challenging. Through Dungeon Escape, I learned a lot about gameplay system design, puzzle logic, player interaction systems, and how to break down a mechanic into smaller parts before implementing it in code. More than anything, this project improved the way I think about building game systems from scratch.' }
     ],
-    readTime: "5 min read",
+    timeline: [
+      {
+        date: "Jan 20, 2026",
+        title: "Initial Research & Ideation",
+        description: "This is when I got the idea of building Dungeon Escape — a puzzle-based game where the player explores the dungeon, finds keys, interacts with objects, and solves puzzles to escape."
+      },
+      {
+        date: "Jan 31, 2026",
+        title: "First Prototype Development",
+        description: "I built the first playable prototype with the main mechanics like pressure plates, keys, movable objects, and doors. This was where the game started taking shape."
+      },
+      {
+        date: "Feb 9, 2026",
+        title: "Finalizing the Game",
+        description: "The core game was completed, and I focused on refining the puzzles, improving object placement, and fixing the connections between gameplay systems to make the experience smoother and more challenging."
+      }
+    ],
+    readTime: "10 min read",
     author: "Vansh Jain",
     stats: {
       focus: "Gameplay Programming",
@@ -29,48 +46,4 @@ export const blogs = [
     tags: ["Game Dev", "Systems", "Puzzle"],
     featured: true
   },
-  {
-    id: "optimizing-compute-shaders",
-    title: "Optimizing Compute Shaders for Procedural Foliage",
-    category: "GRAPHICS",
-    date: "Oct 12, 2024",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600",
-    description: "Reducing GPU stall times by 15% using asynchronous compute queues and better thread group tiling.",
-    contentBlocks: [
-      { type: 'text', value: 'Rendering vast landscapes of foliage presents a unique challenge in modern game development. As we push for higher density and more dynamic interactivity, traditional CPU-side instancing often becomes the bottleneck. In this article, we dive deep into offloading the heavy lifting of placement, culling, and animation to GPU Compute Shaders.' },
-      { type: 'heading', value: 'The Power of Direct3D 12 & Vulkan Compute' },
-      { type: 'text', value: 'By utilizing modern graphics APIs, we can perform thousands of collision checks and terrain-following calculations in a single frame. This approach allows for truly infinite-feeling ecosystems that react to player movement with zero CPU overhead.' },
-      { type: 'image', value: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800', caption: 'Fig 1.1 Data Flow from Terrain Texture to GPU Indirect Draw Arguments.' },
-      { type: 'heading', value: 'Kernel Implementation' },
-      { type: 'text', value: 'The core of our optimization lies in the dispatch architecture. We organize our grass blades into \'clusters\' to maximize wave occupancy and minimize thread divergence during visibility tests.' },
-      { type: 'code', language: 'hlsl', value: '[numthreads(64, 1, 1)]\nvoid ComputeKernel(uint3 id : SV_DispatchThreadID) {\n    uint instanceIdx = id.x;\n    if (instanceIdx >= _TotalInstances) return;\n\n    // Output Buffer Data\n    float3 pos = GetInstancePosition(instanceIdx);\n    float3 normal = SampleTerrainNormal(pos.xz);\n\n    // Frustum Culling\n    if (!IsVisible(pos)) return;\n\n    // Append to DrawBuffer\n    uint drawIndex;\n    _VisibleBuffer.InterlockedAdd(0, 1, drawIndex);\n    _VisibleBuffer[drawIndex] = BuildInstanceData(pos, normal);\n}' }
-    ],
-    timeline: [
-      {
-        date: "Oct 10, 2024",
-        title: "Initial Research & D3D12/Vulkan Analysis",
-        description: "Deep dive into modern compute capabilities across different APIs. Evaluated memory barriers and resource transitions for optimal foliage dispatching."
-      },
-      {
-        date: "Oct 15, 2024",
-        title: "Prototype Kernel for Frustum Culling",
-        description: "Successfully moved visibility testing from CPU to GPU. Implemented a hierarchical Z-buffer approach to minimize overdraw in dense forest clusters."
-      },
-      {
-        date: "Oct 18, 2024",
-        title: "Scene Graph Integration",
-        description: "Connected the compute pipeline to the existing scene management system. Focused on seamless data handoff between the engine's main pass and our custom foliage kernels."
-      }
-    ],
-    readTime: "8 min read",
-    author: "Vansh Jain",
-    stats: {
-      focus: "Graphics Programming",
-      framework: "HLSL / Compute Shaders",
-      engine: "Custom Engine"
-    },
-    tools: ["HLSL", "RenderDoc", "C++"],
-    tags: ["Graphics", "Optimization", "GPU"],
-    featured: false
-  }, 
 ];

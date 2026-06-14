@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   ArrowRight, Code, Cpu, Terminal, Compass, Map, Blend, MonitorCog,
   Layers, Sparkles, Trophy, Laptop, Trees, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
@@ -24,8 +24,8 @@ export const Home = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
@@ -39,7 +39,6 @@ export const Home = () => {
     { name: 'Unity', icon: <Compass className="h-4 w-4 text-brand-accent" /> },
     { name: 'C#', icon: <Code className="h-4 w-4 text-brand-accent" /> },
     { name: 'Unreal Engine', icon: <Cpu className="h-4 w-4 text-brand-accent" /> },
-    { name: 'Photoshop', icon: <Sparkles className="h-4 w-4 text-brand-accent" /> },
     { name: 'C++', icon: <Terminal className="h-4 w-4 text-brand-accent" /> },
     { name: 'Blueprints', icon: <Map className="h-4 w-4 text-brand-accent" /> },
     { name: 'Multi-Player', icon: <Blend className="h-4 w-4 text-brand-accent" /> },
@@ -48,7 +47,7 @@ export const Home = () => {
 
   // Flatten all project images for the carousel
   const allImages = projects.flatMap(p => p.gallery && p.gallery.length > 0 ? p.gallery : [p.image]).filter(Boolean);
-  
+
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -65,7 +64,7 @@ export const Home = () => {
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        
+
         {/* Name Banner */}
         <div className="mb-8">
           <BlurText
@@ -79,21 +78,21 @@ export const Home = () => {
         </div>
 
         {/* Bento Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
           className="grid grid-cols-1 lg:grid-cols-12 gap-6"
         >
-          
+
           {/* LEFT SIDE BLOCK (8 Columns on Large Screens) */}
           <div className="lg:col-span-8 flex flex-col gap-6">
-            
+
             {/* Tag Pills Bar */}
-            
+
 
             {/* Arched Profile Photo Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="bg-brand-cardBg border border-brand-mint/50 rounded-[2rem] p-8 shadow-card flex flex-col items-center justify-center relative overflow-hidden group min-h-[400px] md:min-h-[450px]"
             >
@@ -102,9 +101,9 @@ export const Home = () => {
 
               {/* Arch Profile Wrapper */}
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-t-full rounded-b-3xl border-8 border-brand-mint bg-brand-mint/40 overflow-hidden shadow-inner flex items-end justify-center">
-                <img 
-                  src="/images/profile.png" 
-                  alt="Vansh Jain profile headshot" 
+                <img
+                  src="/images/profile.png"
+                  alt="Vansh Jain profile headshot"
                   className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -139,22 +138,22 @@ export const Home = () => {
                 ))}
               </div>
             </motion.div>
-            
+
           </div>
 
           {/* RIGHT SIDE BLOCK (4 Columns on Large Screens) */}
           <div className="lg:col-span-4 flex flex-col gap-6">
-            
+
             {/* Info Box Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="bg-brand-cardBg border border-brand-mint/50 rounded-[2rem] p-6 sm:p-8 shadow-card flex flex-col justify-between h-auto min-h-[220px]"
             >
               <div className="mb-6">
-                <h2 className="text-2xl font-bold font-display text-brand-dark leading-snug flex flex-wrap items-center gap-x-2 gap-y-1">
+                <h2 className="text-[30px] font-bold font-display text-brand-dark leading-snug flex flex-wrap items-center gap-x-2 gap-y-1">
                   Hello, I'm a
                   <RotatingText
-                    texts={['Game Developer', 'Designer', 'Sculpter']}
+                    texts={['Game Programmer', 'Game Developer', 'Software Engineer']}
                     staggerFrom="last"
                     initial={{ y: '100%' }}
                     animate={{ y: 0 }}
@@ -180,7 +179,7 @@ export const Home = () => {
             </motion.div>
 
             {/* Featured Project Card 1: Neon Genesis */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               whileHover={{ y: -5 }}
               className="bg-brand-cardBg border border-brand-mint/50 rounded-[2rem] p-6 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden group flex flex-col justify-between"
@@ -193,19 +192,19 @@ export const Home = () => {
                   <p className="text-xs text-gray-600 font-medium leading-relaxed mb-4">
                     A first-person puzzle adventure game built in Unreal Engine 5 featuring modular C++ gameplay systems, interactive environmental puzzles, and immersive dungeon exploration.
                   </p>
-                  <Link 
-                    to="/projects/dungeon-escape" 
+                  <Link
+                    to="/projects/dungeon-escape"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-dark hover:text-brand-accent transition-colors"
                   >
                     View Details <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
-                
+
                 {/* Cyberpunk Game Thumbnail */}
                 <div className="w-28 h-24 sm:w-32 sm:h-28 rounded-2xl overflow-hidden border border-brand-mint shadow-sm flex-shrink-0 bg-brand-mint/20">
-                  <img 
-                    src="https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg" 
-                    alt="Dungeon Escape screenshot" 
+                  <img
+                    src="https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg"
+                    alt="Dungeon Escape screenshot"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -213,7 +212,7 @@ export const Home = () => {
             </motion.div>
 
             {/* Fantasy Realm Highlight Card */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               whileHover={{ y: -5 }}
               onClick={() => setCarouselOpen(true)}
@@ -221,9 +220,9 @@ export const Home = () => {
             >
               {/* Fantasy Village Image */}
               <div className="relative h-32 w-full rounded-2xl overflow-hidden border border-brand-mint bg-brand-mint/20">
-                <img 
-                  src="https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg" 
-                  alt="Fantasy Realm preview" 
+                <img
+                  src="https://live.staticflickr.com/65535/55287154867_601b3cf94e_b.jpg"
+                  alt="Fantasy Realm preview"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider text-brand-dark border border-brand-mint/50">
@@ -244,7 +243,7 @@ export const Home = () => {
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
                   <img src="https://live.staticflickr.com/65535/55293180437_8cb4626229_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
-                
+
                 <div className="h-14 rounded-xl border border-brand-mint/60 overflow-hidden bg-brand-mint/10">
                   <img src="https://live.staticflickr.com/65535/55288072461_29448cacbe_b.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
@@ -264,8 +263,8 @@ export const Home = () => {
                 <p className="text-xs text-gray-500 font-medium mb-4">
                   Browse the complete list of technical explorations.
                 </p>
-                <Link 
-                  to="/projects" 
+                <Link
+                  to="/projects"
                   className="px-5 py-2.5 rounded-full bg-brand-accent hover:bg-brand-hover text-white text-xs font-bold shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center gap-1"
                 >
                   Enter Project Log <ArrowRight className="h-3.5 w-3.5" />
@@ -282,7 +281,7 @@ export const Home = () => {
       {/* Gallery Carousel Modal */}
       <AnimatePresence>
         {carouselOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -290,7 +289,7 @@ export const Home = () => {
             onClick={() => setCarouselOpen(false)}
           >
             {/* Close Button */}
-            <button 
+            <button
               className="absolute top-4 right-4 sm:top-8 sm:right-8 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-50"
               onClick={(e) => {
                 e.stopPropagation();
@@ -301,7 +300,7 @@ export const Home = () => {
             </button>
 
             {/* Left Arrow */}
-            <button 
+            <button
               className="absolute left-4 sm:left-8 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-50"
               onClick={prevImage}
             >
@@ -311,14 +310,14 @@ export const Home = () => {
             {/* Main Image */}
             <div className="w-full h-full max-h-[85vh] flex items-center justify-center relative overflow-hidden px-12 sm:px-24">
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={currentImageIndex}
                   initial={{ opacity: 0, x: 50, scale: 0.95 }}
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -50, scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  src={allImages[currentImageIndex]} 
-                  alt={`Gallery view ${currentImageIndex + 1}`} 
+                  src={allImages[currentImageIndex]}
+                  alt={`Gallery view ${currentImageIndex + 1}`}
                   className="max-w-full max-h-full rounded-2xl object-contain shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
@@ -326,7 +325,7 @@ export const Home = () => {
             </div>
 
             {/* Right Arrow */}
-            <button 
+            <button
               className="absolute right-4 sm:right-8 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-50"
               onClick={nextImage}
             >
