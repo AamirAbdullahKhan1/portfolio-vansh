@@ -68,7 +68,7 @@ export const Navbar = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-full bg-brand-mint/40 hover:bg-brand-mint/60 border border-brand-mint/40 text-brand-dark transition-colors"
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? <X className="h-5 w-5 cursor-pointer" /> : <Menu className="h-5 w-5 cursor-pointer" />}
             </button>
           </div>
         </nav>
@@ -101,19 +101,7 @@ export const Navbar = () => {
 
               <hr className="border-brand-mint/60 my-2" />
 
-              <div className="flex items-center justify-between gap-4 px-4 pt-2">
-                <div className="relative flex-grow">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="w-full bg-brand-mint/40 text-xs text-brand-dark pl-9 pr-4 py-2.5 rounded-xl border border-transparent focus:border-brand-accent/20 focus:outline-none"
-                  />
-                  <Search className="absolute left-3 top-3 h-3.5 w-3.5 text-gray-400" />
-                </div>
-                <button className="h-10 w-10 flex items-center justify-center rounded-xl bg-brand-mint/40 text-brand-dark border border-brand-mint/60">
-                  <User className="h-5 w-5" />
-                </button>
-              </div>
+              
             </div>
           </motion.div>
         )}

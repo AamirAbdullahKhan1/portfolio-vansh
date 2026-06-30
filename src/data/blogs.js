@@ -51,14 +51,18 @@ export const blogs = [
     title: "Devlog #2 — Obstacle Dodge (Rebuild from Scratch)",
     category: "LEARNING PROJECT",
     date: "Jun 24, 2026",
-    image: "https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg",
+    image: "https://live.staticflickr.com/65535/55366317313_80ba33255d_b.jpg",
     description: "Rebuilt the course's 'Obstacle Dodge' game from scratch after first completing it via the course walkthrough. Implemented player movement, obstacle mechanics, projectiles, and a custom health system.",
     contentBlocks: [
       { type: 'text', value: 'Rebuilt the course\'s "Obstacle Dodge" game from scratch after first completing it via the course walkthrough. Implemented player movement, obstacle rotation and movement (dropping from a height), projectile flying, and a custom health system (not part of the original course game — added on my own).' },
       { type: 'heading', value: 'What I Built Myself' },
       { type: 'text', value: 'I designed and built the player movement independently. For the obstacle rotation and movement, I referred to the Unity docs first, then course materials when stuck, but attempted most of it independently.' },
       { type: 'text', value: 'I also designed the Health system architecture: I realized health logic shouldn\'t live on the Obstacle script (it wasn\'t resetting on restart), so I created a separate script with a health value and isAlive bool, attached it to the Player, and used tags to detect obstacle hits. I verified the trigger logic worked using Debug.Log before writing the actual health-reduction logic.' },
-      { type: 'code', language: 'csharp', value: 'SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);' },
+      { type: 'image', value: 'https://live.staticflickr.com/65535/55366358039_96023cb746_h.jpg', caption: 'Code Snippet 1: Player health and Player Movement Logic' },
+
+      { type: 'image', value: 'https://live.staticflickr.com/65535/55366572900_12b6e94ef4_b.jpg', caption: 'Code Snippet 2: Projectile Movement Logic' },
+
+      { type: 'image', value: 'https://live.staticflickr.com/65535/55366572895_d14417ee50_b.jpg', caption: 'Code Snippet 3: Player Input Action Logic' },
       { type: 'text', value: 'I found the scene-reset line via the Unity docs. I also debugged a real bug myself: health was only decreasing once per obstacle instead of every hit — traced it to a leftover deduplication check in the Obstacle script that was treating any hit as already-counted. Removed it and confirmed the fix.' },
       { type: 'heading', value: 'Where I Got Stuck / Used Help' },
       { type: 'text', value: 'I used ChatGPT for debugging assistance while building the Health system specifically — used as a "stuck after trying myself" resource, not to generate the system outright. I also referred to the course GitLab repo when docs alone weren\'t enough for obstacle rotation.' },
