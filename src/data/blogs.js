@@ -46,4 +46,45 @@ export const blogs = [
     tags: ["Game Dev", "Systems", "Puzzle"],
     featured: true
   },
+  {
+    id: "devlog-2-obstacle-dodge",
+    title: "Devlog #2 — Obstacle Dodge (Rebuild from Scratch)",
+    category: "LEARNING PROJECT",
+    date: "Jun 24, 2026",
+    image: "https://live.staticflickr.com/65535/55286971909_182946cd63_b.jpg",
+    description: "Rebuilt the course's 'Obstacle Dodge' game from scratch after first completing it via the course walkthrough. Implemented player movement, obstacle mechanics, projectiles, and a custom health system.",
+    contentBlocks: [
+      { type: 'text', value: 'Rebuilt the course\'s "Obstacle Dodge" game from scratch after first completing it via the course walkthrough. Implemented player movement, obstacle rotation and movement (dropping from a height), projectile flying, and a custom health system (not part of the original course game — added on my own).' },
+      { type: 'heading', value: 'What I Built Myself' },
+      { type: 'text', value: 'I designed and built the player movement independently. For the obstacle rotation and movement, I referred to the Unity docs first, then course materials when stuck, but attempted most of it independently.' },
+      { type: 'text', value: 'I also designed the Health system architecture: I realized health logic shouldn\'t live on the Obstacle script (it wasn\'t resetting on restart), so I created a separate script with a health value and isAlive bool, attached it to the Player, and used tags to detect obstacle hits. I verified the trigger logic worked using Debug.Log before writing the actual health-reduction logic.' },
+      { type: 'code', language: 'csharp', value: 'SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);' },
+      { type: 'text', value: 'I found the scene-reset line via the Unity docs. I also debugged a real bug myself: health was only decreasing once per obstacle instead of every hit — traced it to a leftover deduplication check in the Obstacle script that was treating any hit as already-counted. Removed it and confirmed the fix.' },
+      { type: 'heading', value: 'Where I Got Stuck / Used Help' },
+      { type: 'text', value: 'I used ChatGPT for debugging assistance while building the Health system specifically — used as a "stuck after trying myself" resource, not to generate the system outright. I also referred to the course GitLab repo when docs alone weren\'t enough for obstacle rotation.' },
+      { type: 'heading', value: 'What I Learned' },
+      { type: 'text', value: 'Architecture lesson: ownership matters — health is player-owned state, not obstacle-owned. Obstacles should only know "I deal damage," not track someone else\'s health. This pattern will repeat constantly (enemies, hazards, pickups).' },
+      { type: 'text', value: 'Debugging lesson: verify triggers fire correctly with Debug.Log before writing logic on top of them — isolates whether the bug is in detection or in logic.' },
+      { type: 'text', value: 'Unity gotcha: collision/trigger events can fire multiple times for a single "hit" depending on colliders — guards against this need to be precise (per-instance), not global, or you introduce the opposite bug. To verify next time I touch this: confirm one hit = exactly one health decrease, not more (possible risk now that the dedup guard is removed).' },
+      { type: 'heading', value: 'Code Quality Note' },
+      { type: 'text', value: 'Didn\'t prioritize clean code this round — focus was on getting systems working and understanding why they work. Clean architecture is a deliberate next-pass skill, not a day-1 priority.' }
+    ],
+    timeline: [
+      {
+        date: "Jun 24, 2026",
+        title: "Rebuild from Scratch",
+        description: "Rebuilt the Obstacle Dodge game independently to solidify learning and added custom mechanics like a health system."
+      }
+    ],
+    readTime: "5 min read",
+    author: "Vansh Jain",
+    stats: {
+      focus: "Game Mechanics",
+      framework: "C#",
+      engine: "Unity3d"
+    },
+    tools: ["Unity", "C#"],
+    tags: ["Game Dev", "Devlog", "Learning"],
+    featured: false
+  }
 ];
